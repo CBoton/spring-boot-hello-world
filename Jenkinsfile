@@ -1,4 +1,3 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent { docker { image 'docker.io/boton318/spring-boot-hello-world' } }
     stages {
