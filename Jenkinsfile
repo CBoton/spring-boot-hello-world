@@ -24,14 +24,15 @@ pipeline {
           bat "mvn test"
         }
       }
-      stage("Run") {
+    }
+    stage("Run") {
         steps {
           dir("spring-boot-hello-world") {
             bat "mvn spring-boot:run"
-          }
         }
       }
     }
   }
+}
 }
 
