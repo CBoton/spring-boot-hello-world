@@ -1,10 +1,30 @@
 pipeline {
-    agent { docker { image 'docker.io/boton318/spring-boot-hello-world' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn spring-boot:run'
-            }
-        }
+  agent any
+  stages {
+    stage("Clean Up"){
+      steps{
+        deleteDir()
+      }
     }
+    stage("Clone Repo"){
+      steps {
+        bat "git clone https://github.com/CBoton/https://github.com/CBoton/spring-boot-hello-world.git"
+      }
+    }
+    stage("Build"){
+      steps {
+        dir("spring-boot-hello-world") {
+          bat "mvn clean install"
+        }
+      }
+    }
+    stage("Test") {
+      steps {
+        dir("spring-boot-hello-world") {
+          bat "mvn test"
+        }
+      }
+    }
+  }
 }
+
