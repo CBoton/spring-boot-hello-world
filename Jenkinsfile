@@ -8,7 +8,7 @@ pipeline {
     }
     stage("Clone Repo"){
       steps {
-        bat "git clone https://github.com/CBoton/https://github.com/CBoton/spring-boot-hello-world.git"
+        bat "git clone https://github.com/CBoton/spring-boot-hello-world.git"
       }
     }
     stage("Build"){
