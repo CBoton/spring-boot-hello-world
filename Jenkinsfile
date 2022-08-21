@@ -13,27 +13,21 @@ pipeline {
     }
     stage("Build"){
       steps {
-        dir("spring-boot-hello-world") {
           bat "mvn clean install"
-        }
       }
     }
     stage("Test") {
       steps {
-        dir("spring-boot-hello-world") {
           bat "mvn test"
-        }
       }
     }
     stage("Package") {
         steps {
-          dir("spring-boot-hello-world") {
             bat "mvn package"
-        }
+        
         post {
-            dir("spring-boot-hello-world") {
             archiveArtifacts 'target/*.jar'
-          }
+          
         }
       }
     }
