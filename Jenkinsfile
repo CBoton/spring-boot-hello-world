@@ -25,10 +25,15 @@ pipeline {
         }
       }
     }
-    stage("Run") {
+    stage("Package") {
         steps {
           dir("spring-boot-hello-world") {
-            bat "mvn spring-boot:run"
+            bat "mvn package"
+        }
+        post {
+          success {
+            archiveArtifacts 'target/*.jar'
+          }
         }
       }
     }
