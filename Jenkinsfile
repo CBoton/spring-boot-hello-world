@@ -32,7 +32,7 @@ pipeline {
         }
         post {
             dir("spring-boot-hello-world") {
-            archiveArtifacts artifacts: 'target/*.jar'
+            archiveArtifacts 'target/*.jar'
           }
         }
       }
