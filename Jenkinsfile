@@ -33,7 +33,7 @@ pipeline {
         post {
             dir("spring-boot-hello-world") {
             archiveArtifacts 'target/'
-              bat copy C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target C:\Users\Curti\Desktop
+              bat "copy C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target C:\Users\Curti\Desktop"
           }
         }
       }
