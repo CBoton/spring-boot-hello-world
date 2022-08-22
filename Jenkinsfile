@@ -35,7 +35,6 @@ pipeline {
           success {
             dir("spring-boot-hello-world") {
             archiveArtifacts 'target/*.jar'
-            bat "copy C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target\*.jar C:\Users\Curti\Downloads"
           }
         }
       }
