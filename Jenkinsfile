@@ -31,9 +31,8 @@ pipeline {
             bat "mvn package"
         }
         post {
-            dir("spring-boot-hello-world") {
-            archiveArtifacts 'target/'
-              bat "copy C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target C:\Users\Curti\Desktop"
+            dir("spring-boot-hello-world/target") {
+            archiveArtifacts 'target/*.jar'
           }
         }
       }
