@@ -30,10 +30,10 @@ pipeline {
           dir("spring-boot-hello-world") {
             bat "mvn package"
         }
+        }
         post {
-            dir("spring-boot-hello-world") {
-            archiveArtifacts 'target'
-          }
+          dir("spring-boot-hello-world") {
+          archiveArtifacts 'target/*.jar'
         }
       }
     }
