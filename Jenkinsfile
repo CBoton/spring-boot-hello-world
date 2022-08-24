@@ -41,14 +41,13 @@ pipeline {
     }
     stage("Copy"){
       steps {
-        script{
+       
         fileOperations([fileCopyOperation(
         excludes: '',
         flattenFiles: false,
         includes: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\spring\\spring-boot-hello-world\\target',
         targetLocation: "C:\\output"
-        )]).
-          }
+        )])
       }
     }
   }
