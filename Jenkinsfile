@@ -44,7 +44,7 @@ pipeline {
         fileOperations([fileCopyOperation(
         excludes: '',
         flattenFiles: false,
-        includes: 'C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target',
+        includes: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\spring\\spring-boot-hello-world\\target',
         targetLocation: "C:\\output"
         )]).
       }
