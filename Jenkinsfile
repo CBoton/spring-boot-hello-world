@@ -29,7 +29,7 @@ pipeline {
         steps {
           dir("spring-boot-hello-world") {
             bat "mvn package"
-            bat "copy target ../target"
+            bat "copy "C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target\*.jar C:\users\curti\Desktop"
         }
         }
         post {
