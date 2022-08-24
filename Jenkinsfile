@@ -41,9 +41,12 @@ pipeline {
     }
     stage("Copy"){
       steps {
-        dir("spring-boot-hello-world"){
-          bat ("copy target/*.jar C:\\Users\\Curti\\Downloads")
-        }
+        fileOperations([fileCopyOperation(
+        excludes: '',
+        flattenFiles: false,
+        includes: 'C:\ProgramData\Jenkins\.jenkins\workspace\spring\spring-boot-hello-world\target',
+        targetLocation: "C:\\output"
+        )]).
       }
     }
   }
