@@ -42,7 +42,7 @@ pipeline {
     stage("Copy"){
       steps {
         dir("spring-boot-hello-world"){
-          bat "copy target/*.jar C:\Users\Curti\Downloads"
+          bat "copy target/*.jar C:\\Users\Curti\Downloads"
         }
       }
     }
