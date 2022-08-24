@@ -29,7 +29,6 @@ pipeline {
         steps {
           dir("spring-boot-hello-world") {
             bat "mvn package"
-            bat ("copy target/*.jar C:/output")
         }
         }
         post {
@@ -40,7 +39,13 @@ pipeline {
         }
       }
     }
+    stage("Copy"){
+      steps {
+        dir("spring-boot-hello-world"){
+          bat "copy target\*.jar C:\Users\Curti\Downloads"
+        }
+      }
+    }
   }
 }
-
 
