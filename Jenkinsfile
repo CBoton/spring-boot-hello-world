@@ -45,7 +45,7 @@ pipeline {
         fileOperations([fileCopyOperation(
         excludes: '',
         flattenFiles: false,
-        includes: 'target/*.jar',
+        includes: '**/*.jar',
         targetLocation: "C:\\output"
         )])
       }
